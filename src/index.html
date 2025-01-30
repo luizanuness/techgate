@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TechGate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../scss/styles.scss" />
+  </head>
+  <body>
+    <!--container central-->
+    <div class="background-container">
+      <div
+        class="card mb-0 h-100 w-100"
+        style="max-width: 1330px; height: 866px"
+      >
+        <div class="row g-0 h-100">
+          <!--coluna imagem-->
+          <div class="col-md-6 h-100 p-0">
+            <div class="overlay-container">
+              <img
+                src="../assets/img/logofullw.png"
+                alt="Logo TechGate"
+                class="overlay-image"
+              />
+              <div class="overlay-text">Bem vindo(a) de volta!</div>
+            </div>
+          </div>
+
+          <!--coluna forms-->
+          <div class="col-md-6 h-100 p-0">
+            <div
+              class="card-body h-100 d-flex flex-column justify-content-start"
+            >
+              <div class="container py-2 px-3 mx-auto">
+                <h1 style="font-size: 64px; text-decoration: underline">
+                  Olá!
+                </h1>
+                <h3
+                  class="login-title"
+                  style="font-size: 24px; margin-bottom: 20px"
+                >
+                  Faça login na sua conta
+                </h3>
+
+                <!--forms login-->
+                <div class="mb-3">
+                  <label
+                    for="exampleFormControlInput1"
+                    class="form-label form-text"
+                  >
+                    Usuário/E-mail
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlUser"
+                    placeholder="Inserir usuário ou e-mail"
+                    style="margin-top: -10px"
+                  />
+                </div>
+
+                <div class="mb-3" style="margin-top: -10px">
+                  <label
+                    for="exampleFormControlPassword"
+                    class="form-label form-text"
+                  >
+                    Senha
+                  </label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="exampleFormControlPassword"
+                    placeholder="Inserir senha"
+                    style="margin-top: -10px"
+                  />
+                </div>
+
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input custom-checkbox"
+                      id="rememberMe"
+                    />
+                    <label
+                      class="form-check-label form-text small-text"
+                      for="rememberMe"
+                      >Lembre-se de mim</label
+                    >
+                  </div>
+                  <a
+                    href="link-da-outra-pagina.html"
+                    class="link-custom small-text"
+                  >
+                    <h3 class="form-text">Esqueceu a senha?</h3>
+                  </a>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-custom w-100"
+                  onclick="login()"
+                >
+                  Login
+                </button>
+
+                <!-- Seção de separação -->
+                <div class="separator">
+                  <span class="separator-text">OU</span>
+                </div>
+
+                <!--logins por social-->
+                <div class="loginsocial mt-3">
+                  <div class="row align-items-center justify-content-center">
+                    <div class="col-auto">
+                      <div class="icon-container">
+                        <img
+                          src="../assets/img/google.png"
+                          alt="Google Login"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon-container">
+                        <img
+                          src="../assets/img/linkedin.png"
+                          alt="LinkedIn Login"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon-container">
+                        <img
+                          src="../assets/img/github.png"
+                          alt="GitHub Login"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon-container">
+                        <img
+                          src="../assets/img/xtwitter.png"
+                          alt="X Twitter Login"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="account-section mt-3">
+                  <h5>Não tem uma conta?</h5>
+                  <a href="link-da-outra-pagina.html" class="link-custom">
+                    <h5>Cadastre-se</h5>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+      async function login() {
+        const identifier = document.getElementById(
+          "exampleFormControlUser"
+        ).value;
+        const password = document.getElementById(
+          "exampleFormControlPassword"
+        ).value;
+        const rememberMe = document.getElementById("rememberMe").checked;
+
+        const response = await fetch("/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            identifier: identifier,
+            password: password,
+            rememberMe: rememberMe,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const token = data.token;
+          const role = data.role;
+
+          if (rememberMe) {
+            localStorage.setItem("authToken", token);
+          } else {
+            sessionStorage.setItem("authToken", token);
+          }
+
+          alert("Login bem-sucedido!");
+          if (role === "ADMINISTRADOR") {
+            window.location.href = "admin-dashboard.html";
+          } else if (role === "EMPRESA") {
+            window.location.href = "empresa-dashboard.html";
+          } else if (role === "FREELANCER") {
+            window.location.href = "freelancer-dashboard.html";
+          }
+        } else {
+          alert("Usuário ou senha incorretos.");
+        }
+      }
+
+      window.onload = function () {
+        const token =
+          localStorage.getItem("authToken") ||
+          sessionStorage.getItem("authToken");
+        if (token) {
+          fetch("/auth/check", {
+            method: "GET",
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          }).then((response) => {
+            if (response.ok) {
+              // Redirecionar para a página principal ou dashboard
+              window.location.href = "user-dashboard.html";
+            }
+          });
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+@import "bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Public Sans", sans-serif;
+  background-image: url("../assets/img/backgroundimg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.background-container {
+  background-color: white;
+  padding: 0; /* Remove padding */
+  border-radius: 56px; /* Ajusta a borda para 56px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1330px;
+  width: 100%;
+  height: 866px;
+  display: flex;
+  overflow: hidden; /* Adiciona overflow hidden para criar a máscara */
+  margin: 0; /* Remove margin */
+}
+
+.card {
+  margin: 0; /* Remove margin */
+}
+
+.loginsocial {
+  max-width: 500px; /* Define a largura máxima da seção loginsocial */
+  margin: 0 auto; /* Centraliza a seção loginsocial */
+}
+
+.loginsocial .col-auto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 5px; /* Diminui a margem entre os ícones */
+}
+
+.icon-container {
+  width: 75px;
+  height: 75px;
+  background-color: #ededed;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #94c2c9;
+}
+
+.loginsocial img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 56px 0 0 56px; /* Ajusta a borda para combinar com o contêiner */
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+.form-text {
+  font-size: 24px; /* Define o tamanho do texto do formulário para 24px */
+}
+
+.form-control {
+  border: 3px solid #94c2c9; /* Define a borda de 3px para as caixas de inserção */
+  color: #94c2c9; /* Define a cor do texto */
+  height: 50px; /* Aumenta a altura das caixas de input */
+}
+
+.form-control::placeholder {
+  color: #94c2c9; /* Define a cor do placeholder */
+}
+
+.form-label {
+  color: #000; /* Define a cor do texto do rótulo como preto */
+}
+
+.link-custom {
+  color: #26408b;
+  text-decoration: none;
+}
+
+.link-custom:hover {
+  text-decoration: underline;
+}
+
+.form-check-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-checkbox .form-check-input {
+  width: 20px;
+  height: 20px;
+  background-color: #94c2c9;
+  border: 2px solid #94c2c9;
+}
+
+.btn-custom {
+  background-color: #73a3aa;
+  border-color: #73a3aa;
+  color: white;
+  height: 82px; /* Define a altura do botão como 82px */
+  font-weight: bold;
+  font-size: 32px; /* Define o tamanho do texto padrão como 32px */
+  transition: background-color 0.3s, font-size 0.3s; /* Adiciona transição suave */
+}
+
+.btn-custom:hover {
+  background-color: #526391;
+  font-size: 36px; /* Aumenta o tamanho do texto ao passar o mouse */
+  color: white;
+}
+
+.small-text {
+  font-size: 20px;
+}
+
+.form-check-label {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  padding-top: 0; /* Remove padding superior */
+}
+
+.overlay-container {
+  position: relative;
+  background-image: url("../assets/img/columnlog.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-image {
+  width: auto;
+  height: 300px;
+}
+
+.overlay-text {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px; /* Ajuste conforme necessário */
+}
+
+.form-control {
+  box-shadow: 0px 7px 9.4px -1px #a6cfd5;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0; /* Ajusta a margem vertical */
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 4px solid #868383; /* Define a altura e a cor da linha */
+}
+
+.separator:not(:empty)::before {
+  margin-right: 1em; /* Aumenta a margem direita */
+}
+
+.separator:not(:empty)::after {
+  margin-left: 1em; /* Aumenta a margem esquerda */
+}
+
+.separator-text {
+  color: #868383; /* Define a cor do texto */
+  font-weight: bold; /* Deixa o texto em negrito */
+}
+
+.account-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; /* Ajusta a margem superior */
+  font-size: 24px; /* Define o tamanho do texto */
+  max-width: 365px; /* Define a largura máxima da seção */
+  margin: 0 auto; /* Centraliza a seção */
+}
+
+.login-title {
+  margin-bottom: 40px; /* Aumenta a margem inferior da seção "Faça login" */
+}
+
+.loginsocial {
+  margin-bottom: 10px; /* Reduz a margem inferior da seção de login social */
+}
