@@ -14,22 +14,68 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../scss/styles.scss" />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      @keyframes borderColorChange {
+        0% {
+          border-color: #00ffcc; /* Mudar a cor da borda para azul */
+        }
+        50% {
+          border-color: #479888; /* Mudar a cor da borda para um tom mais escuro de azul */
+        }
+        100% {
+          border-color: #00ffcc; /* Mudar a cor da borda para azul */
+        }
+      }
+
+      .animated-border {
+        animation: borderColorChange 3s infinite;
+      }
+
+      .animated-button {
+        background-color: transparent;
+        border: 2px solid;
+        color: #00ffcc; /* Mudar a cor do texto para azul */
+        box-shadow: 0 4px 15px #00ffcc; /* Mudar a cor da sombra para azul */
+        animation: borderColorChange 3s infinite;
+        transition: box-shadow 0.3s, color 0.3s, font-size 0.3s; /* Adicionar transição suave */
+      }
+
+      .animated-button:hover {
+        box-shadow: 0 4px 15px #479888; /* Mudar a cor da sombra para #213a35 ao passar o mouse */
+        color: #479888; /* Mudar a cor do texto para #213a35 ao passar o mouse */
+        font-size: 18px; /* Diminuir o tamanho do texto ao passar o mouse */
+      }
+
+      body,
+      .form-label,
+      .btn,
+      p,
+      a,
+      span {
+        font-family: "Poppins", sans-serif; /* Changed to Poppins */
+      }
+    </style>
   </head>
   <body>
-    <!--container central-->
+    <!-- Container de fundo -->
     <div
       class="background-container"
       style="
         background-color: rgba(18, 24, 38, 0.8);
         border: 2px solid #00ffcc;
-        max-width: 1000px;
+        max-width: 1200px; /* Aumentar o tamanho do container */
       "
     >
       <div
         class="card mb-0 h-100 w-100"
         style="
-          max-width: 1000px;
+          max-width: 1200px; /* Aumentar o tamanho do container */
           height: auto;
           border-radius: 16px;
           background: rgba(255, 255, 255, 0.1);
@@ -39,341 +85,339 @@
           border: 1px solid rgba(255, 255, 255, 0.3);
         "
       >
-        <div class="row g-0 h-100">
-          <!--coluna forms-->
-          <div class="col-md-6 h-100 p-0">
-            <div
-              class="card-body h-100 d-flex flex-column justify-content-start"
+        <div class="card-body">
+          <div class="text-start mb-4">
+            <a
+              href="../index.html"
+              style="
+                text-decoration: none;
+                color: #dec5fe; /* Mudar a cor para #7D2AE8 */
+                display: flex;
+                align-items: center;
+              "
             >
-              <div class="container py-2 px-3 mx-auto">
-                <a
-                  href="../index.html"
-                  class="link-custom"
-                  style="font-size: 20px; display: flex; align-items: center"
-                >
-                  <span style="margin-right: 5px">&#8592;</span> Voltar
-                </a>
-                <h1
-                  class="greeting-text"
-                  style="font-size: 48px; text-decoration: underline"
-                >
-                  Cadastro
-                </h1>
-                <!-- Formulário de cadastro -->
-                <form>
-                  <div class="mb-3">
-                    <label for="name" class="form-label form-text login-text"
-                      >Nome</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      placeholder="Inserir nome"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="username"
-                      class="form-label form-text login-text"
-                      >Usuário</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="username"
-                      placeholder="Inserir usuário"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label form-text login-text"
-                      >E-mail</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      placeholder="Inserir e-mail"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="password"
-                      class="form-label form-text login-text"
-                    >
-                      Senha
-                      <span
-                        title="Mínimo de 8 caracteres, combinação de letras e números"
-                        >ℹ️</span
-                      >
-                    </label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="password"
-                      placeholder="Inserir senha"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="confirmPassword"
-                      class="form-label form-text login-text"
-                      >Confirmar Senha</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="confirmPassword"
-                      placeholder="Confirmar senha"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="profileType"
-                      class="form-label form-text login-text"
-                      >Tipo de Perfil</label
-                    >
-                    <select
-                      class="form-control"
-                      id="profileType"
-                      onchange="toggleProfileFields()"
-                    >
-                      <option value="freelancer">Freelancer</option>
-                      <option value="empresa">Empresa</option>
-                    </select>
-                  </div>
+              <span
+                class="material-symbols-outlined"
+                style="transform: rotate(180deg); margin-right: 8px"
+              >
+                ➔
+              </span>
+              <p style="margin: 0; text-decoration: underline">Voltar</p>
+            </a>
+          </div>
+          <!-- Imagem de título do formulário -->
+          <div
+            id="formImage"
+            class="text-center mb-4"
+            style="position: relative"
+          >
+            <img
+              src="../assets/img/headerform.png"
+              alt="Imagem do formulário"
+              style="
+                width: 100%;
+                max-height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+              "
+            />
+            <img
+              src="../assets/img/logocorridaw.png"
+              alt="Overlay Logo Corrido TechGate"
+              style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                opacity: 0.5;
+              "
+            />
+          </div>
+          <h1
+            class="greeting-text"
+            style="
+              font-size: 48px;
+              text-decoration: underline;
+              text-align: center;
+              margin: 20px 0;
+            "
+          >
+            Cadastro
+          </h1>
 
-                  <!-- Freelancer Fields -->
-                  <div id="freelancerFields" style="display: none">
-                    <div class="mb-3">
-                      <label
-                        for="freelancerRole"
-                        class="form-label form-text login-text"
-                        >Função</label
-                      >
-                      <select class="form-control" id="freelancerRole">
-                        <option value="desenvolvimento">
-                          Desenvolvimento de Software
-                        </option>
-                        <option value="design">Design</option>
-                        <option value="dados">Dados e Análise</option>
-                        <option value="marketing">Marketing Digital</option>
-                        <option value="consultoria">Consultoria e TI</option>
-                        <option value="testes">Testes e Qualidade</option>
-                        <option value="seguranca">Segurança Cibernética</option>
-                        <option value="outros">Outros (Especificar)</option>
-                      </select>
-                      <input
-                        type="text"
-                        class="form-control mt-2"
-                        id="freelancerOtherRole"
-                        placeholder="Especificar função"
-                        style="display: none"
-                      />
-                    </div>
-                  </div>
-
-                  <!-- Empresa Fields -->
-                  <div id="empresaFields" style="display: none">
-                    <div class="mb-3">
-                      <label
-                        for="companyName"
-                        class="form-label form-text login-text"
-                        >Nome da Empresa</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="companyName"
-                        placeholder="Inserir nome da empresa"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="corporateEmail"
-                        class="form-label form-text login-text"
-                        >E-mail Corporativo</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="corporateEmail"
-                        placeholder="Inserir e-mail corporativo"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="contactPhone"
-                        class="form-label form-text login-text"
-                        >Telefone de Contato</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="contactPhone"
-                        placeholder="Inserir telefone de contato"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="companyAddress"
-                        class="form-label form-text login-text"
-                        >Endereço da Empresa</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="companyAddress"
-                        placeholder="Inserir endereço da empresa"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="companyType"
-                        class="form-label form-text login-text"
-                        >Tipo de Empresa</label
-                      >
-                      <select class="form-control" id="companyType">
-                        <option value="desenvolvimento">
-                          Desenvolvimento de Software
-                        </option>
-                        <option value="consultoria">Consultoria</option>
-                        <option value="marketing">Marketing Digital</option>
-                        <option value="design">Design</option>
-                        <option value="hardware">Hardware</option>
-                        <option value="educacao">Educação Tecnológica</option>
-                        <option value="outros">Outros (Especificar)</option>
-                      </select>
-                      <input
-                        type="text"
-                        class="form-control mt-2"
-                        id="companyOtherType"
-                        placeholder="Especificar tipo de empresa"
-                        style="display: none"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="employeeCount"
-                        class="form-label form-text login-text"
-                        >Número de Funcionários</label
-                      >
-                      <select class="form-control" id="employeeCount">
-                        <option value="1-10">1-10</option>
-                        <option value="11-50">11-50</option>
-                        <option value="51-100">51-100</option>
-                        <option value="101-500">101-500</option>
-                        <option value="501-1000">501-1000</option>
-                        <option value="1001+">1001+</option>
-                      </select>
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="companyWebsite"
-                        class="form-label form-text login-text"
-                        >Website da Empresa</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="companyWebsite"
-                        placeholder="Inserir website da empresa"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label
-                        for="companyDescription"
-                        class="form-label form-text login-text"
-                        >Descrição da Empresa</label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="companyDescription"
-                        placeholder="Inserir descrição da empresa"
-                      ></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label for="cnpj" class="form-label form-text login-text"
-                        >CNPJ</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="cnpj"
-                        placeholder="Inserir CNPJ"
-                      />
-                    </div>
-                  </div>
-
-                  <button type="submit" class="btn btn-custom">
-                    Entrar no Portal
-                  </button>
-                </form>
-              </div>
-            </div>
+          <!-- Seção de navegação entre Freelancer e Empresa -->
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-outline-info me-2"
+              id="freelancerTab"
+              onclick="showFreelancerForm()"
+            >
+              Freelancer
+            </button>
+            <button
+              class="btn btn-outline-info"
+              id="empresaTab"
+              onclick="showEmpresaForm()"
+            >
+              Empresa
+            </button>
           </div>
 
-          <!--coluna imagem-->
-          <div class="col-md-6 h-100 p-0">
-            <div class="overlay-container">
-              <img
-                src="../assets/img/logofullw.png"
-                alt="Logo TechGate"
-                class="overlay-image"
-                style="width: 80%; height: auto; object-fit: contain"
-              />
-              <div
-                class="overlay-text typing-animation"
-                style="margin-top: 10px"
-              >
-                Bem vindo(a) ao seu portal freelancer!
+          <!-- Formulário Freelancer -->
+          <div id="freelancerForm" class="mt-4" style="display: none">
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="freelancerName" class="form-label">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="freelancerName"
+                    placeholder="Inserir nome"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="freelancerUsername" class="form-label"
+                    >Usuário</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="freelancerUsername"
+                    placeholder="Inserir usuário"
+                  />
+                </div>
               </div>
-            </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="freelancerRole" class="form-label">Função</label>
+                  <select class="form-control" id="freelancerRole">
+                    <option value="design">Design</option>
+                    <option value="dados">Dados e Análise</option>
+                    <option value="marketing">Marketing Digital</option>
+                    <option value="consultoria">Consultoria e TI</option>
+                    <option value="testes">Testes e Qualidade</option>
+                    <option value="seguranca">Segurança Cibernética</option>
+                    <option value="outros">Outros (Especificar)</option>
+                  </select>
+                  <input
+                    type="text"
+                    class="form-control mt-2"
+                    id="freelancerOtherRole"
+                    placeholder="Especificar função"
+                    style="display: none"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="freelancerEmail" class="form-label">E-mail</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="freelancerEmail"
+                    placeholder="Inserir e-mail"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="freelancerPassword" class="form-label">
+                    Senha
+                    <span
+                      title="Mínimo de 8 caracteres, combinação de letras e números"
+                      >ℹ️</span
+                    >
+                  </label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="freelancerPassword"
+                    placeholder="Inserir senha"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="freelancerConfirmPassword" class="form-label"
+                    >Confirmar Senha</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="freelancerConfirmPassword"
+                    placeholder="Confirmar senha"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-custom w-100 animated-button"
+                onclick="cad()"
+                style="
+                  background-color: transparent;
+                  width: auto;
+                  padding: 2px 5px; /* Diminuir o tamanho do botão */
+                  margin-top: 20px; /* Aumentar a distância do formulário para o botão */
+                "
+              >
+                Entrar no Portal
+              </button>
+            </form>
+          </div>
+
+          <!-- Formulário Empresa -->
+          <div id="empresaForm" class="mt-4" style="display: none">
+            <form>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <!-- Aumentar o tamanho do campo -->
+                  <label for="empresaName" class="form-label"
+                    >Nome da Empresa</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="empresaName"
+                    placeholder="Inserir nome da empresa"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <!-- Diminuir o tamanho do campo -->
+                  <label for="empresaCNPJ" class="form-label">CNPJ</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="empresaCNPJ"
+                    placeholder="Inserir CNPJ"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <!-- Diminuir o tamanho do campo -->
+                  <label for="empresaPhone" class="form-label"
+                    >Telefone de Contato</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="empresaPhone"
+                    placeholder="Inserir telefone"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <!-- Ajustar o tamanho do campo -->
+                  <label for="empresaEmail" class="form-label"
+                    >E-mail Corporativo</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="empresaEmail"
+                    placeholder="Inserir e-mail corporativo"
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <!-- Diminuir o tamanho do campo -->
+                  <label for="empresaAddress" class="form-label"
+                    >Endereço da Empresa</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="empresaAddress"
+                    placeholder="Inserir endereço da empresa"
+                  />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <!-- Ajustar o tamanho do campo -->
+                  <label for="empresaType" class="form-label"
+                    >Tipo de Empresa</label
+                  >
+                  <select class="form-control" id="empresaType">
+                    <option value="desenvolvimento">
+                      Desenvolvimento de Software
+                    </option>
+                    <option value="consultoria">Consultoria</option>
+                    <option value="marketing">Marketing Digital</option>
+                    <option value="design">Design</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="educacao">Educação Tecnológica</option>
+                    <option value="outros">Outros (Especificar)</option>
+                  </select>
+                  <input
+                    type="text"
+                    class="form-control mt-2"
+                    id="empresaOtherType"
+                    placeholder="Especificar tipo de empresa"
+                    style="display: none"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="empresaPassword" class="form-label">
+                    Senha
+                    <span
+                      title="Mínimo de 8 caracteres, combinação de letras e números"
+                      >ℹ️</span
+                    >
+                  </label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="empresaPassword"
+                    placeholder="Inserir senha"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="empresaConfirmPassword" class="form-label"
+                    >Confirmar Senha</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="empresaConfirmPassword"
+                    placeholder="Confirmar senha"
+                  />
+                </div>
+              </div>
+              <button
+                type="button"
+                class="btn btn-custom w-100 animated-button"
+                onclick="cad()"
+                style="
+                  background-color: transparent;
+                  width: auto;
+                  padding: 2px 5px; /* Diminuir o tamanho do botão */
+                  margin-top: 20px; /* Aumentar a distância do formulário para o botão */
+                "
+              >
+                Entrar no Portal
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      function toggleProfileFields() {
-        const profileType = document.getElementById("profileType").value;
-        const freelancerFields = document.getElementById("freelancerFields");
-        const empresaFields = document.getElementById("empresaFields");
-        const freelancerOtherRole = document.getElementById(
-          "freelancerOtherRole"
-        );
-        const companyOtherType = document.getElementById("companyOtherType");
-
-        if (profileType === "freelancer") {
-          freelancerFields.style.display = "block";
-          empresaFields.style.display = "none";
-        } else if (profileType === "empresa") {
-          freelancerFields.style.display = "none";
-          empresaFields.style.display = "block";
-        }
-
-        document
-          .getElementById("freelancerRole")
-          .addEventListener("change", function () {
-            if (this.value === "outros") {
-              freelancerOtherRole.style.display = "block";
-            } else {
-              freelancerOtherRole.style.display = "none";
-            }
-          });
-
-        document
-          .getElementById("companyType")
-          .addEventListener("change", function () {
-            if (this.value === "outros") {
-              companyOtherType.style.display = "block";
-            } else {
-              companyOtherType.style.display = "none";
-            }
-          });
+      // Funções para alternar entre os formulários
+      function showFreelancerForm() {
+        document.getElementById("freelancerForm").style.display = "block";
+        document.getElementById("empresaForm").style.display = "none";
+        document.getElementById("freelancerTab").classList.add("active");
+        document.getElementById("empresaTab").classList.remove("active");
       }
 
-      window.onload = toggleProfileFields;
+      function showEmpresaForm() {
+        document.getElementById("freelancerForm").style.display = "none";
+        document.getElementById("empresaForm").style.display = "block";
+        document.getElementById("empresaTab").classList.add("active");
+        document.getElementById("freelancerTab").classList.remove("active");
+      }
+
+      // Iniciar com o formulário Freelancer visível
+      window.onload = showFreelancerForm;
     </script>
   </body>
 </html>

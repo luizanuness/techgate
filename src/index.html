@@ -44,6 +44,15 @@
         }
       }
 
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
       .typing-animation {
         font-family: "Exo 2", sans-serif; /* Changed to Exo 2 */
         white-space: nowrap;
@@ -119,6 +128,14 @@
 
       .login-title {
         margin-bottom: 40px; /* Increased margin */
+      }
+
+      .btn-custom:hover {
+        font-size: 18px; /* Smaller font size on hover */
+      }
+
+      .fade-in {
+        animation: none; /* Disable fade-in animation */
       }
     </style>
   </head>
@@ -243,6 +260,11 @@
                   type="button"
                   class="btn btn-custom w-100"
                   onclick="login()"
+                  style="
+                    background-color: transparent;
+                    width: auto;
+                    padding: 10px 20px;
+                  "
                 >
                   Login
                 </button>
@@ -292,7 +314,12 @@
 
                 <div class="account-section mt-3">
                   <h5>Não tem uma conta?</h5>
-                  <a href="pages/cad.html">Cadastre-se</a>
+                  <a
+                    href="javascript:void(0);"
+                    onclick="navigateToCad()"
+                    style="color: #dec5fe; text-decoration: underline"
+                    >Cadastre-se</a
+                  >
                 </div>
               </div>
             </div>
@@ -366,6 +393,10 @@
           });
         }
       };
+
+      function navigateToCad() {
+        window.location.href = "pages/cad.html"; // Direct navigation without animation
+      }
     </script>
   </body>
 </html>

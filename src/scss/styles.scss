@@ -148,15 +148,15 @@ h1 {
 }
 
 .form-control {
-  border: 3px solid #0056b3; /* Darker blue border */
-  color: #0056b3; /* Darker blue text color */
+  border: 3px solid #00aaff; /* Azul mais claro */
+  color: #00aaff; /* Azul mais claro */
   height: 50px;
-  background-color: transparent; /* Transparent background */
-  box-shadow: 0px 3px 4.7px -1px #0056b3; /* Darker blue shadow */
+  background-color: transparent;
+  box-shadow: 0px 3px 4.7px -1px #00aaff; /* Azul mais claro */
 }
 
 .form-control::placeholder {
-  color: #0056b3; /* Darker blue placeholder color */
+  color: #00aaff; /* Azul mais claro */
 }
 
 .form-label {
@@ -187,32 +187,22 @@ h1 {
 }
 
 .btn-custom {
-  background-color: rgba(
-    38,
-    64,
-    139,
-    0.5
-  ); /* More transparent blue background */
-  border-color: #00ffcc; /* Neon border */
-  color: #ffffff; /* White text color */
-  height: 50px; /* Button height */
+  background-color: rgba(38, 64, 139, 0.5);
+  border-color: #00aaff; /* Azul mais claro */
+  color: #ffffff;
+  height: 50px;
   font-weight: bold;
-  font-size: 20px; /* Reduced font size */
+  font-size: 20px;
   transition: background-color 0.3s, font-size 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc; /* Reduced shadow distance */
-  animation: rainbow-border 10s infinite; /* Apply rainbow border animation */
+  box-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 15px #00aaff; /* Azul mais claro */
+  animation: rainbow-border 10s infinite;
 }
 
 .btn-custom:hover {
-  background-color: rgba(
-    27,
-    46,
-    107,
-    0.5
-  ); /* More transparent darker blue background */
-  font-size: 24px; /* Increased font size on hover */
-  color: #ffffff; /* White text color */
-  box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc; /* Reduced shadow distance */
+  background-color: rgba(27, 46, 107, 0.5);
+  font-size: 24px;
+  color: #ffffff;
+  box-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 15px #00aaff; /* Azul mais claro */
 }
 
 .btn-login {
@@ -356,4 +346,20 @@ h1 {
   background-color: transparent;
   border: none;
   color: #00ffcc; /* Neon color */
+}
+
+#freelancerRole {
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%2300aaff" d="M2 0L0 2h4z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+#empresaType {
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%2300aaff" d="M2 0L0 2h4z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
 }
