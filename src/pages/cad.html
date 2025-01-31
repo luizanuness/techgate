@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro - TechGate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../scss/styles.scss" />
+  </head>
+  <body>
+    <!--container central-->
+    <div
+      class="background-container"
+      style="
+        background-color: rgba(18, 24, 38, 0.8);
+        border: 2px solid #00ffcc;
+        max-width: 1000px;
+      "
+    >
+      <div
+        class="card mb-0 h-100 w-100"
+        style="
+          max-width: 1000px;
+          height: auto;
+          border-radius: 16px;
+          background: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+        "
+      >
+        <div class="row g-0 h-100">
+          <!--coluna forms-->
+          <div class="col-md-6 h-100 p-0">
+            <div
+              class="card-body h-100 d-flex flex-column justify-content-start"
+            >
+              <div class="container py-2 px-3 mx-auto">
+                <a
+                  href="../index.html"
+                  class="link-custom"
+                  style="font-size: 20px; display: flex; align-items: center"
+                >
+                  <span style="margin-right: 5px">&#8592;</span> Voltar
+                </a>
+                <h1
+                  class="greeting-text"
+                  style="font-size: 48px; text-decoration: underline"
+                >
+                  Cadastro
+                </h1>
+                <!-- Formulário de cadastro -->
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label form-text login-text"
+                      >Nome</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Inserir nome"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      for="username"
+                      class="form-label form-text login-text"
+                      >Usuário</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      placeholder="Inserir usuário"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label form-text login-text"
+                      >E-mail</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Inserir e-mail"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      for="password"
+                      class="form-label form-text login-text"
+                    >
+                      Senha
+                      <span
+                        title="Mínimo de 8 caracteres, combinação de letras e números"
+                        >ℹ️</span
+                      >
+                    </label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Inserir senha"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      for="confirmPassword"
+                      class="form-label form-text login-text"
+                      >Confirmar Senha</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirmPassword"
+                      placeholder="Confirmar senha"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      for="profileType"
+                      class="form-label form-text login-text"
+                      >Tipo de Perfil</label
+                    >
+                    <select
+                      class="form-control"
+                      id="profileType"
+                      onchange="toggleProfileFields()"
+                    >
+                      <option value="freelancer">Freelancer</option>
+                      <option value="empresa">Empresa</option>
+                    </select>
+                  </div>
+
+                  <!-- Freelancer Fields -->
+                  <div id="freelancerFields" style="display: none">
+                    <div class="mb-3">
+                      <label
+                        for="freelancerRole"
+                        class="form-label form-text login-text"
+                        >Função</label
+                      >
+                      <select class="form-control" id="freelancerRole">
+                        <option value="desenvolvimento">
+                          Desenvolvimento de Software
+                        </option>
+                        <option value="design">Design</option>
+                        <option value="dados">Dados e Análise</option>
+                        <option value="marketing">Marketing Digital</option>
+                        <option value="consultoria">Consultoria e TI</option>
+                        <option value="testes">Testes e Qualidade</option>
+                        <option value="seguranca">Segurança Cibernética</option>
+                        <option value="outros">Outros (Especificar)</option>
+                      </select>
+                      <input
+                        type="text"
+                        class="form-control mt-2"
+                        id="freelancerOtherRole"
+                        placeholder="Especificar função"
+                        style="display: none"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Empresa Fields -->
+                  <div id="empresaFields" style="display: none">
+                    <div class="mb-3">
+                      <label
+                        for="companyName"
+                        class="form-label form-text login-text"
+                        >Nome da Empresa</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="companyName"
+                        placeholder="Inserir nome da empresa"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="corporateEmail"
+                        class="form-label form-text login-text"
+                        >E-mail Corporativo</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="corporateEmail"
+                        placeholder="Inserir e-mail corporativo"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="contactPhone"
+                        class="form-label form-text login-text"
+                        >Telefone de Contato</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="contactPhone"
+                        placeholder="Inserir telefone de contato"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="companyAddress"
+                        class="form-label form-text login-text"
+                        >Endereço da Empresa</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="companyAddress"
+                        placeholder="Inserir endereço da empresa"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="companyType"
+                        class="form-label form-text login-text"
+                        >Tipo de Empresa</label
+                      >
+                      <select class="form-control" id="companyType">
+                        <option value="desenvolvimento">
+                          Desenvolvimento de Software
+                        </option>
+                        <option value="consultoria">Consultoria</option>
+                        <option value="marketing">Marketing Digital</option>
+                        <option value="design">Design</option>
+                        <option value="hardware">Hardware</option>
+                        <option value="educacao">Educação Tecnológica</option>
+                        <option value="outros">Outros (Especificar)</option>
+                      </select>
+                      <input
+                        type="text"
+                        class="form-control mt-2"
+                        id="companyOtherType"
+                        placeholder="Especificar tipo de empresa"
+                        style="display: none"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="employeeCount"
+                        class="form-label form-text login-text"
+                        >Número de Funcionários</label
+                      >
+                      <select class="form-control" id="employeeCount">
+                        <option value="1-10">1-10</option>
+                        <option value="11-50">11-50</option>
+                        <option value="51-100">51-100</option>
+                        <option value="101-500">101-500</option>
+                        <option value="501-1000">501-1000</option>
+                        <option value="1001+">1001+</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="companyWebsite"
+                        class="form-label form-text login-text"
+                        >Website da Empresa</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="companyWebsite"
+                        placeholder="Inserir website da empresa"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="companyDescription"
+                        class="form-label form-text login-text"
+                        >Descrição da Empresa</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="companyDescription"
+                        placeholder="Inserir descrição da empresa"
+                      ></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="cnpj" class="form-label form-text login-text"
+                        >CNPJ</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="cnpj"
+                        placeholder="Inserir CNPJ"
+                      />
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-custom">
+                    Entrar no Portal
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!--coluna imagem-->
+          <div class="col-md-6 h-100 p-0">
+            <div class="overlay-container">
+              <img
+                src="../assets/img/logofullw.png"
+                alt="Logo TechGate"
+                class="overlay-image"
+                style="width: 80%; height: auto; object-fit: contain"
+              />
+              <div
+                class="overlay-text typing-animation"
+                style="margin-top: 10px"
+              >
+                Bem vindo(a) ao seu portal freelancer!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleProfileFields() {
+        const profileType = document.getElementById("profileType").value;
+        const freelancerFields = document.getElementById("freelancerFields");
+        const empresaFields = document.getElementById("empresaFields");
+        const freelancerOtherRole = document.getElementById(
+          "freelancerOtherRole"
+        );
+        const companyOtherType = document.getElementById("companyOtherType");
+
+        if (profileType === "freelancer") {
+          freelancerFields.style.display = "block";
+          empresaFields.style.display = "none";
+        } else if (profileType === "empresa") {
+          freelancerFields.style.display = "none";
+          empresaFields.style.display = "block";
+        }
+
+        document
+          .getElementById("freelancerRole")
+          .addEventListener("change", function () {
+            if (this.value === "outros") {
+              freelancerOtherRole.style.display = "block";
+            } else {
+              freelancerOtherRole.style.display = "none";
+            }
+          });
+
+        document
+          .getElementById("companyType")
+          .addEventListener("change", function () {
+            if (this.value === "outros") {
+              companyOtherType.style.display = "block";
+            } else {
+              companyOtherType.style.display = "none";
+            }
+          });
+      }
+
+      window.onload = toggleProfileFields;
+    </script>
+  </body>
+</html>
