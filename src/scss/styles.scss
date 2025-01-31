@@ -5,7 +5,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url("../assets/img/backgroundimg.png");
+  background-image: url("../assets/img/backgroundimg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,25 +30,25 @@ h1 {
 }
 
 .background-container {
-  background-color: white;
-  padding: 0; /* Remove padding */
-  border-radius: 56px; /* Ajusta a borda para 56px */
+  background-color: #121826;
+  padding: 0;
+  border-radius: 56px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 1330px;
   width: 100%;
   height: 866px;
   display: flex;
-  overflow: hidden; /* Adiciona overflow hidden para criar a máscara */
-  margin: 0; /* Remove margin */
+  overflow: hidden;
+  margin: 0;
 }
 
 .card {
-  margin: 0; /* Remove margin */
+  margin: 0;
 }
 
 .loginsocial {
-  max-width: 500px; /* Define a largura máxima da seção loginsocial */
-  margin: 0 auto; /* Centraliza a seção loginsocial */
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .loginsocial .col-auto {
@@ -56,7 +56,7 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin: 0 5px; /* Diminui a margem entre os ícones */
+  margin: 0 5px;
 }
 
 .icon-container {
@@ -81,27 +81,27 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 56px 0 0 56px; /* Ajusta a borda para combinar com o contêiner */
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
+  border-radius: 56px 0 0 56px;
+  margin: 0;
+  padding: 0;
 }
 
 .form-text {
-  font-size: 24px; /* Define o tamanho do texto do formulário para 24px */
+  font-size: 24px;
 }
 
 .form-control {
-  border: 3px solid #94c2c9; /* Define a borda de 3px para as caixas de inserção */
-  color: #94c2c9; /* Define a cor do texto */
-  height: 50px; /* Aumenta a altura das caixas de input */
+  border: 3px solid #94c2c9;
+  color: #94c2c9;
+  height: 50px;
 }
 
 .form-control::placeholder {
-  color: #94c2c9; /* Define a cor do placeholder */
+  color: #94c2c9;
 }
 
 .form-label {
-  color: #000; /* Define a cor do texto do rótulo como preto */
+  color: #000;
 }
 
 .link-custom {
@@ -130,15 +130,15 @@ h1 {
   background-color: #73a3aa;
   border-color: #73a3aa;
   color: white;
-  height: 82px; /* Define a altura do botão como 82px */
+  height: 82px;
   font-weight: bold;
-  font-size: 32px; /* Define o tamanho do texto padrão como 32px */
-  transition: background-color 0.3s, font-size 0.3s; /* Adiciona transição suave */
+  font-size: 32px;
+  transition: background-color 0.3s, font-size 0.3s;
 }
 
 .btn-custom:hover {
   background-color: #526391;
-  font-size: 36px; /* Aumenta o tamanho do texto ao passar o mouse */
+  font-size: 36px;
   color: white;
 }
 
@@ -152,7 +152,7 @@ h1 {
 }
 
 .container {
-  padding-top: 0; /* Remove padding superior */
+  padding-top: 0;
 }
 
 .overlay-container {
@@ -177,7 +177,7 @@ h1 {
   color: white;
   font-weight: bold;
   text-align: center;
-  margin-top: 10px; /* Ajuste conforme necessário */
+  margin-top: 10px;
 }
 
 .form-control {
@@ -200,43 +200,43 @@ h1 {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 20px 0; /* Ajusta a margem vertical */
+  margin: 20px 0;
 }
 
 .separator::before,
 .separator::after {
   content: "";
   flex: 1;
-  border-bottom: 4px solid #868383; /* Define a altura e a cor da linha */
+  border-bottom: 4px solid #868383;
 }
 
 .separator:not(:empty)::before {
-  margin-right: 1em; /* Aumenta a margem direita */
+  margin-right: 1em;
 }
 
 .separator:not(:empty)::after {
-  margin-left: 1em; /* Aumenta a margem esquerda */
+  margin-left: 1em;
 }
 
 .separator-text {
-  color: #868383; /* Define a cor do texto */
-  font-weight: bold; /* Deixa o texto em negrito */
+  color: #868383;
+  font-weight: bold;
 }
 
 .account-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px; /* Ajusta a margem superior */
-  font-size: 24px; /* Define o tamanho do texto */
-  max-width: 365px; /* Define a largura máxima da seção */
-  margin: 0 auto; /* Centraliza a seção */
+  margin-top: 10px;
+  font-size: 24px;
+  max-width: 365px;
+  margin: 0 auto;
 }
 
 .login-title {
-  margin-bottom: 40px; /* Aumenta a margem inferior da seção "Faça login" */
+  margin-bottom: 40px;
 }
 
 .loginsocial {
-  margin-bottom: 10px; /* Reduz a margem inferior da seção de login social */
+  margin-bottom: 10px;
 }
