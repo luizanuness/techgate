@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro - TechGate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../scss/styles.scss" />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      @keyframes borderColorChange {
+        0% {
+          border-color: #00ffcc; /* Mudar a cor da borda para azul */
+        }
+        50% {
+          border-color: #479888; /* Mudar a cor da borda para um tom mais escuro de azul */
+        }
+        100% {
+          border-color: #00ffcc; /* Mudar a cor da borda para azul */
+        }
+      }
+
+      .animated-border {
+        animation: borderColorChange 3s infinite;
+      }
+
+      .animated-button {
+        background-color: transparent;
+        border: 2px solid;
+        color: #00ffcc; /* Mudar a cor do texto para azul */
+        box-shadow: 0 4px 15px #00ffcc; /* Mudar a cor da sombra para azul */
+        animation: borderColorChange 3s infinite;
+        transition: box-shadow 0.3s, color 0.3s, font-size 0.3s; /* Adicionar transição suave */
+      }
+
+      .animated-button:hover {
+        box-shadow: 0 4px 15px #479888; /* Mudar a cor da sombra para #213a35 ao passar o mouse */
+        color: #479888; /* Mudar a cor do texto para #213a35 ao passar o mouse */
+        font-size: 18px; /* Diminuir o tamanho do texto ao passar o mouse */
+      }
+
+      body,
+      .form-label,
+      .btn,
+      p,
+      a,
+      span {
+        font-family: "Poppins", sans-serif; /* Changed to Poppins */
+      }
+    </style>
+  </head>
+  <body>
+    <div th:replace="~{../assets/components/headerfree :: cabecalho}"></div>
+  </body>
+</html>
