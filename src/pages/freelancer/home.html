@@ -15,54 +15,208 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../scss/styles.scss" />
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-      }
-
-      @keyframes borderColorChange {
-        0% {
-          border-color: #00ffcc; /* Mudar a cor da borda para azul */
-        }
-        50% {
-          border-color: #479888; /* Mudar a cor da borda para um tom mais escuro de azul */
-        }
-        100% {
-          border-color: #00ffcc; /* Mudar a cor da borda para azul */
-        }
-      }
-
-      .animated-border {
-        animation: borderColorChange 3s infinite;
-      }
-
-      .animated-button {
-        background-color: transparent;
-        border: 2px solid;
-        color: #00ffcc; /* Mudar a cor do texto para azul */
-        box-shadow: 0 4px 15px #00ffcc; /* Mudar a cor da sombra para azul */
-        animation: borderColorChange 3s infinite;
-        transition: box-shadow 0.3s, color 0.3s, font-size 0.3s; /* Adicionar transição suave */
-      }
-
-      .animated-button:hover {
-        box-shadow: 0 4px 15px #479888; /* Mudar a cor da sombra para #213a35 ao passar o mouse */
-        color: #479888; /* Mudar a cor do texto para #213a35 ao passar o mouse */
-        font-size: 18px; /* Diminuir o tamanho do texto ao passar o mouse */
-      }
-
-      body,
-      .form-label,
-      .btn,
-      p,
-      a,
-      span {
-        font-family: "Poppins", sans-serif; /* Changed to Poppins */
-      }
-    </style>
+    <link rel="stylesheet" href="./scss/freelancer.css" />
   </head>
   <body>
-    <div th:replace="~{../assets/components/headerfree :: cabecalho}"></div>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img
+          src="../../assets/img/logocorridaw.png"
+          alt="TechGate Logo"
+          class="logo"
+        />
+      </div>
+      <div class="navbar-right">
+        <a href="home.html" class="active">Home</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="oportunidades.html">Oportunidades</a>
+        <div class="notifications">
+          <img
+            src="../../assets/img/notifications_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+            alt="Notificações"
+            class="notification-icon"
+          />
+        </div>
+        <div class="profile-dropdown">
+          <img
+            src="../../assets/img/account_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+            alt="User Profile"
+            class="profile-icon"
+          />
+          <div class="dropdown-content">
+            <a href="editar-perfil.html">Editar Perfil</a>
+            <a href="habilidades-experiencias.html"
+              >Habilidades e Experiências</a
+            >
+            <a href="login.html">Sair da Conta</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="welcome-header">
+      <h1 class="typing-effect">
+        👾 Olá, <span th:text="${userName}">Usuário</span>! 👋 | Pronto para um
+        novo desafio?
+      </h1>
+    </header>
+
+    <main class="p-6">
+      <div class="card-row">
+        <div class="projects-container">
+          <section class="projects-section">
+            <h2 style="font-family: 'Exo 2', sans-serif">
+              📂 Projetos em Andamento
+            </h2>
+            <ul class="projects-list">
+              <li>
+                <div class="project-details">
+                  <strong>Projeto 1</strong>
+                  <p>Descrição do projeto 1</p>
+                  <div class="progress">
+                    <span>50% concluído</span>
+                    <div class="progress-bar" style="width: 50%"></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="project-details">
+                  <strong>Projeto 2</strong>
+                  <p>Descrição do projeto 2</p>
+                  <div class="progress">
+                    <span>75% concluído</span>
+                    <div class="progress-bar" style="width: 75%"></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="project-details">
+                  <strong>Projeto 3</strong>
+                  <p>Descrição do projeto 3</p>
+                  <div class="progress">
+                    <span>30% concluído</span>
+                    <div class="progress-bar" style="width: 30%"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <section class="status-panel">
+          <h2>Status do Freelancer</h2>
+          <p>
+            Lvl <span th:text="${freelancerLevel}">00</span> |
+            <span th:text="${freelancerTitle}">Título do nível</span> 🧑‍💻
+          </p>
+        </section>
+        <section class="opportunities-panel">
+          <h2 style="font-family: 'Exo 2', sans-serif">
+            🎯 Oportunidades e Matches
+          </h2>
+          <ul class="opportunities-list">
+            <li th:each="project : ${suggestedProjects}">
+              <div class="opportunity-details">
+                <strong th:text="${project.name}">Projeto A</strong>
+                <p th:text="${project.description}">Descrição do projeto A</p>
+                <p class="tags">
+                  <span
+                    th:each="tag : ${project.tags}"
+                    th:text="${tag.name}"
+                    th:style="'background-color:' + ${tag.color}"
+                    >Tag</span
+                  >
+                </p>
+                <p th:text="'Postado em: ' + ${project.postedDate}">
+                  Postado em: 01/01/2025
+                </p>
+                <button class="apply-button">Candidatar-se</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <section class="terminal-section">
+        <h2 style="font-family: 'Exo 2', sans-serif">💻 Log de Atividades</h2>
+        <div class="terminal">
+          <div class="terminal-header">
+            <select id="log-filter">
+              <option value="recent">Logs Recentes</option>
+              <option value="projects">Atualização de Projetos</option>
+              <option value="proposals">Propostas Recebidas</option>
+              <option value="transfers">Transferências</option>
+            </select>
+          </div>
+          <div class="terminal-body">
+            <p>Conectando ao servidor... ✔️</p>
+            <div id="log-entries">
+              <p th:each="log : ${logs}">
+                <span th:text="${log}"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Ícones fixados na tela -->
+    <div class="fixed-icons">
+      <a href="#" class="fixed-icon" id="chat-icon">
+        <img
+          src="../../assets/img/chat_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
+          alt="Chat"
+        />
+      </a>
+      <a href="projetos.html" class="fixed-icon">
+        <img
+          src="../../assets/img/list_alt_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"
+          alt="Projetos"
+        />
+      </a>
+    </div>
+
+    <!-- Chat fixado na tela -->
+    <div class="chat-box" id="chat-box">
+      <div class="chat-header">
+        <span>Chat</span>
+        <button id="close-chat">
+          <a
+            href="#"
+            class="fixed-icon"
+            id="close-icon"
+            style="background-color: black; width: 10px; height: 10px"
+          >
+            <img
+              src="../../assets/img/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="Chat"
+            />
+          </a>
+        </button>
+      </div>
+      <div class="chat-body">
+        <div class="chat-list">
+          <ul>
+            <li
+              th:each="profile : ${profiles}"
+              th:text="${profile.name}"
+              th:data-id="${profile.id}"
+            >
+              Perfil
+            </li>
+          </ul>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <!-- Conteúdo do chat -->
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" placeholder="Digite sua mensagem..." />
+        <button>Enviar</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2023 TechGate. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./main.js"></script>
   </body>
 </html>
